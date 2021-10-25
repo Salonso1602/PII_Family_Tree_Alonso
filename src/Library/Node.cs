@@ -16,6 +16,7 @@ namespace Library
                 return this.number;
             }
         }
+        public Person Person;
 
         public ReadOnlyCollection<Node> Children { 
             get
@@ -24,8 +25,9 @@ namespace Library
             }
         }
 
-        public Node(int number)
+        public Node(int number, string name, int age)
         {
+            this.Person = new Person(name, age);
             this.number = number;
         }
 
