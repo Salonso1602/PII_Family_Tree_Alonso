@@ -28,7 +28,9 @@ namespace Program
             n3.AddChildren(n7);
             n3.AddChildren(n8);
 
-
+            AgeAdderVisitor turista = new AgeAdderVisitor();
+            turista.Visit(n3);
+            Console.WriteLine(turista.SumOfAllAges);
             // visitar el árbol aquí
         }
     }
