@@ -36,10 +36,6 @@ namespace Library
         public void Accept (Visitor visitor)
         {
             visitor.Visit(this.Person);
-            foreach (Node child in this.Children)
-            {
-                visitor.Visit(child);
-            }  
         }
         
     }
