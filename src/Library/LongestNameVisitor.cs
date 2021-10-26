@@ -1,13 +1,13 @@
 namespace Library
 {
-    public class AgeAdderVisitor : Visitor
+    public class LongestNameVisitor : Visitor
     {
-        protected int sumOfAllAges = 0;
-        public int SumOfAllAges 
+        private Person longestName = new Person("p", 0);
+        public Person LongestName
         {
             get
             {
-                return this.sumOfAllAges;
+                return this.longestName;
             }
         }
         public override void Visit(Node n)
@@ -16,12 +16,15 @@ namespace Library
             foreach (Node child in n.Children)
             {
                 this.Visit(child);
-            }  
+            } 
         }
 
         public override void Visit(Person p)
         {
-            this.sumOfAllAges += p.Age;
+            if (p.Name.Length > this.LongestName.Name.Length)
+            {
+                longestName = p;
+            }
         }
     }
 }
